@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Demo Personal</title>
+<meta name="description" content="Un demo del general un pequeno app">
+<meta property="og:title" content="Demo Personal">
+<meta property="og:description" content="Un demo del general un pequeno app">
+<meta name="generator" content="rendimiento · Mercado">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Nunito+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root { --principal: #D6246E; --segundo: #23408E; --oscuro: #6B1E4A;
+    --papel: #FBF5EA; --tarjeta: #FFFDF8; --borde: #E9DCC8; --texto: #2B1B12; --suave: #6B5444;
+    --titulo: var(--oscuro); --boton: var(--principal); --boton-texto: #fff;
+    color-scheme: light; }
+  @media (prefers-color-scheme: dark) {
+    :root { --papel: #120F2A; --tarjeta: #211531; --borde: #3A2A52; --texto: #F6EBDD; --suave: #B8A9C9;
+      --titulo: var(--segundo); --boton: var(--segundo); --boton-texto: #1B0F0A; color-scheme: dark; }
+  }
+  * { box-sizing: border-box; }
+  html { background: var(--papel); }
+  body { margin: 0; min-height: 100vh; background: var(--papel); color: var(--texto);
+    font: 400 1.05rem/1.65 "Nunito Sans", system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .picado { display: block; width: 100%; height: 84px; }
+  .picado .cordel { stroke: var(--suave); stroke-width: 2; fill: none; }
+  .picado .hueco { fill: var(--papel); }
+  @media (prefers-reduced-motion: no-preference) {
+    .picado g.bandera { transform-origin: top center; transform-box: fill-box; animation: viento 5s ease-in-out infinite; }
+    .picado g.bandera:nth-child(odd) { animation-delay: -2.5s; }
+  }
+  @keyframes viento { 0%, 100% { transform: rotate(-1.5deg); } 50% { transform: rotate(1.5deg); } }
+  main { max-width: 760px; margin: 0 auto; padding: 0 16px 48px; }
+  .puesto { background: var(--tarjeta); border: 1px solid var(--borde); border-radius: 18px; overflow: hidden;
+    box-shadow: 0 10px 30px rgb(0 0 0 / .08); text-align: center; }
+  .toldo { height: 34px; background: repeating-linear-gradient(90deg, var(--principal) 0 30px, #FFF8EC 30px 60px);
+    -webkit-mask: radial-gradient(circle at 15px 0, #000 21px, transparent 22px) 0 0 / 30px 34px repeat-x;
+            mask: radial-gradient(circle at 15px 0, #000 21px, transparent 22px) 0 0 / 30px 34px repeat-x; }
+  .portada { padding: 18px 24px 30px; }
+  .foto { width: min(220px, 60vw); aspect-ratio: 1; object-fit: cover; border-radius: 50%;
+    border: 6px solid var(--segundo); box-shadow: 0 0 0 3px var(--principal); margin: 6px auto 4px; display: block; }
+  h1, h2 { font-family: "Fraunces", Georgia, serif; color: var(--titulo); line-height: 1.15; }
+  h1 { font-size: clamp(2rem, 7vw, 3.2rem); font-weight: 800; margin: 14px 0 6px; }
+  h2 { font-size: 1.5rem; font-weight: 600; margin: 0 0 12px; }
+  .lema { font-size: 1.2rem; color: var(--suave); margin: 0 auto; max-width: 34ch; }
+  .enlaces { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 22px; }
+  .enlaces a { display: inline-flex; flex-direction: column; align-items: center; min-width: 120px; padding: 10px 16px;
+    border-radius: 999px; background: var(--boton); color: var(--boton-texto); text-decoration: none; font-weight: 800; line-height: 1.2; }
+  .enlaces a small { font-weight: 600; opacity: .85; font-size: .8rem; overflow-wrap: anywhere; }
+  .enlaces a:hover, .enlaces a:focus-visible { filter: brightness(1.08); outline: 3px solid var(--segundo); outline-offset: 2px; }
+  section.bloque { margin-top: 22px; background: var(--tarjeta); border: 1px solid var(--borde); border-radius: 18px;
+    padding: 24px; border-top: 6px solid var(--principal); }
+  section.bloque p { margin: 0 0 12px; white-space: pre-line; }
+  section.bloque p:last-child { margin-bottom: 0; }
+  dl { display: grid; grid-template-columns: max-content 1fr; gap: 8px 18px; margin: 0; }
+  dt { font-weight: 800; color: var(--titulo); }
+  dd { margin: 0; white-space: pre-line; }
+  @media (max-width: 480px) { dl { grid-template-columns: 1fr; gap: 2px; } dd { margin-bottom: 10px; } }
+  .galeria { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+  .galeria img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 12px; display: block; }
+  footer { text-align: center; color: var(--suave); font-size: .9rem; padding: 0 16px 32px; }
+  footer .flor { color: var(--principal); }
+</style>
+</head>
+<body>
+<svg class="picado" viewBox="0 0 1408 84" preserveAspectRatio="xMidYMin slice" aria-hidden="true">
+  <path class="cordel" d="M0 10 Q704 22 1408 10"/>
+  <g class="bandera">
+    <path d="M8 10 H92 V64 L85 76 L78 64 L71 76 L64 64 L57 76 L50 64 L43 76 L36 64 L29 76 L22 64 L15 76 L8 64 Z" fill="#D6246E"/>
+    <circle class="hueco" cx="50" cy="34" r="9"/>
+    <path class="hueco" d="M50 18 l5 6 -5 6 -5 -6 Z M50 44 l5 6 -5 6 -5 -6 Z"/>
+  </g><g class="bandera">
+    <path d="M108 10 H192 V64 L185 76 L178 64 L171 76 L164 64 L157 76 L150 64 L143 76 L136 64 L129 76 L122 64 L115 76 L108 64 Z" fill="#D6246E"/>
+    <circle class="hueco" cx="150" cy="34" r="9"/>
+    <path class="hueco" d="M150 18 l5 6 -5 6 -5 -6 Z M150 44 l5 6 -5 6 -5 -6 Z"/>
+  </g><g class="bandera">
+    <path d="M208 10 H292 V64 L285 76 L278 64 L271 76 L264 64 L257 76 L250 64 L243 76 L236 64 L229 76 L222 64 L215 76 L208 64 Z" fill="#23408E"/>
+    <circle class="hueco" cx="250" cy="34" r="9"/>
+    <path class="hueco" d="M250 18 l5 6 -5 6 -5 -6 Z M250 44 l5 6 -5 6 -5 -6 Z"/>
+  </g><g class="bandera">
+    <path d="M308 10 H392 V64 L385 76 L378 64 L371 76 L364 64 L357 76 L350 64 L343 76 L336 64 L329 76 L322 64 L315 76 L308 64 Z" fill="#23408E"/>
+    <circle class="hueco" cx="350" cy="34" r="9"/>
+    <path class="hueco" d="M350 18 l5 6 -5 6 -5 -6 Z M350 44 l5 6 -5 6 -5 -6 Z"/>
+  </g><g class="bandera">
+    <path d="M408 10 H492 V64 L485 76 L478 64 L471 76 L464 64 L457 76 L450 64 L443 76 L436 64 L429 76 L422 64 L415 76 L408 64 Z" fill="#3E7B3A"/>
+    <circle class="hueco" cx="450" cy="34" r="9"/>
+    <path class="hueco" d="M450 18 l5 6 -5 6 -5 -6 Z M450 44 l5 6 -5 6 -5 -6 Z"/>
+  </g><g class="bandera">
+    <path d="M508 10 H592 V64 L585 76 L578 64 L571 76 L564 64 L557 76 L550 64 L543 76 L536 64 L529 76 L522 64 L515 76 L508 64 Z" fill="#E8890C"/>
+    <circle class="hueco" cx="550" cy="34" r="9"/>
+    <path class="hueco" d="M550 18 l5 6 -5 6 -5 -6 Z M550 44 l5 6 -5 6 -5 -6 Z"/>
+  </g><g class="bandera">
+    <path d="M608 10 H692 V64 L685 76 L678 64 L671 76 L664 64 L657 76 L650 64 L643 76 L636 64 L629 76 L622 64 L615 76 L608 64 Z" fill="#8E1B2C"/>
+    <circle class="hueco" cx="650" cy="34" r="9"/>
+    <path class="hueco" d="M650 18 l5 6 -5 6 -5 -6 Z M650 44 l5 6 -5 6 -5 -6 Z"/>
+  </g><g class="bandera">
+    <path d="M708 10 H792 V64 L785 76 L778 64 L771 76 L764 64 L757 76 L750 64 L743 76 L736 64 L729 76 L722 64 L715 76 L708 64 Z" fill="#D6246E"/>
+    <circle class="hueco" cx="750" cy="34" r="9"/>
+    <path class="hueco" d="M750 18 l5 6 -5 6 -5 -6 Z M750 44 l5 6 -5 6 -5 -6 Z"/>
+  </g><g class="bandera">
+    <path d="M808 10 H892 V64 L885 76 L878 64 L871 76 L864 64 L857 76 L850 64 L843 76 L836 64 L829 76 L822 64 L815 76 L808 64 Z" fill="#D6246E"/>
+    <circle class="hueco" cx="850" cy="34" r="9"/>
+    <path class="hueco" d="M850 18 l5 6 -5 6 -5 -6 Z M850 44 l5 6 -5 6 -5 -6 Z"/>
+  </g><g class="bandera">
+    <path d="M908 10 H992 V64 L985 76 L978 64 L971 76 L964 64 L957 76 L950 64 L943 76 L936 64 L929 76 L922 64 L915 76 L908 64 Z" fill="#23408E"/>
+    <circle class="hueco" cx="950" cy="34" r="9"/>
+    <path class="hueco" d="M950 18 l5 6 -5 6 -5 -6 Z M950 44 l5 6 -5 6 -5 -6 Z"/>
+  </g><g class="bandera">
+    <path d="M1008 10 H1092 V64 L1085 76 L1078 64 L1071 76 L1064 64 L1057 76 L1050 64 L1043 76 L1036 64 L1029 76 L1022 64 L1015 76 L1008 64 Z" fill="#23408E"/>
+    <circle class="hueco" cx="1050" cy="34" r="9"/>
+    <path class="hueco" d="M1050 18 l5 6 -5 6 -5 -6 Z M1050 44 l5 6 -5 6 -5 -6 Z"/>
+  </g><g class="bandera">
+    <path d="M1108 10 H1192 V64 L1185 76 L1178 64 L1171 76 L1164 64 L1157 76 L1150 64 L1143 76 L1136 64 L1129 76 L1122 64 L1115 76 L1108 64 Z" fill="#3E7B3A"/>
+    <circle class="hueco" cx="1150" cy="34" r="9"/>
+    <path class="hueco" d="M1150 18 l5 6 -5 6 -5 -6 Z M1150 44 l5 6 -5 6 -5 -6 Z"/>
+  </g><g class="bandera">
+    <path d="M1208 10 H1292 V64 L1285 76 L1278 64 L1271 76 L1264 64 L1257 76 L1250 64 L1243 76 L1236 64 L1229 76 L1222 64 L1215 76 L1208 64 Z" fill="#E8890C"/>
+    <circle class="hueco" cx="1250" cy="34" r="9"/>
+    <path class="hueco" d="M1250 18 l5 6 -5 6 -5 -6 Z M1250 44 l5 6 -5 6 -5 -6 Z"/>
+  </g><g class="bandera">
+    <path d="M1308 10 H1392 V64 L1385 76 L1378 64 L1371 76 L1364 64 L1357 76 L1350 64 L1343 76 L1336 64 L1329 76 L1322 64 L1315 76 L1308 64 Z" fill="#8E1B2C"/>
+    <circle class="hueco" cx="1350" cy="34" r="9"/>
+    <path class="hueco" d="M1350 18 l5 6 -5 6 -5 -6 Z M1350 44 l5 6 -5 6 -5 -6 Z"/>
+  </g>
+</svg>
+<main>
+  <section class="puesto">
+    <div class="toldo" aria-hidden="true"></div>
+    <div class="portada">
+      <img class="foto" src="fotos/402585ed9201.jpg" alt="">
+      <h1>Demo Personal</h1>
+      <p class="lema">Un demo del general un pequeno app</p>
+      <nav class="enlaces">
+        <a href="https://www.instagram.com/usuario/" rel="noopener" target="_blank">Instagram<small>@usuario</small></a>
+        <a href="mailto:demo@fake.com" rel="noopener" >Correo<small>demo@fake.com</small></a>
+        <a href="https://rendimiento.ai" rel="noopener" target="_blank">Sitio web<small>rendimiento.ai</small></a>
+        
+      </nav>
+    </div>
+  </section>
+  
+  
+  <section class="bloque">
+    <h2>Sobre mí</h2>
+    <p>Una prueba para generar paginas</p>
+  </section>
+  <section class="bloque">
+    <h2>Datos</h2>
+    <dl><dt>Nota</dt><dd>Vaya a https://rendimiento.ai</dd></dl>
+  </section>
+  
+</main>
+<footer><span class="flor" aria-hidden="true">✿</span> Hecha a mano en el Mercado de rendimiento</footer>
+</body>
+</html>
+
+

@@ -1,0 +1,17 @@
+# Made by the rendimiento Mercado: a static page, served by nginx.
+services:
+- build:
+    builder: dockerfile
+    dockerfile: Dockerfile
+  domain: demo-personal.rendimiento.ai
+  health:
+    path: /
+  name: pagina
+  path: .
+  port: 8080
+  replicas: 1
+  resources:
+    cpu: 10m
+    memory: 32Mi
+    memoryLimit: 64Mi
+  size: small

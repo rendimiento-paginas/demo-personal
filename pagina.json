@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "tipo": "personal",
+  "idioma": "es",
+  "nombre": "Demo Personal",
+  "lema": "Un demo del general un pequeno app",
+  "sobre": "Una prueba para generar paginas",
+  "paleta": "rosa",
+  "foto": "fotos/402585ed9201.jpg",
+  "detalles": [
+    {
+      "etiqueta": "Nota",
+      "texto": "Vaya a https://rendimiento.ai"
+    }
+  ],
+  "enlaces": [
+    {
+      "tipo": "instagram",
+      "valor": "@usuario"
+    },
+    {
+      "tipo": "correo",
+      "valor": "demo@fake.com"
+    },
+    {
+      "tipo": "web",
+      "valor": "rendimiento.ai"
+    }
+  ]
+}
